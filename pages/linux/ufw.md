@@ -15,14 +15,22 @@
 
 `ufw status`
 
-- Add ufw allow rule:
+- Allow incoming traffic on port 5432 on this host:
 
-`ufw allow {{port}} {{service_name}}`
+`ufw allow {{5432}}`
 
-- Example: Allow access to port 1337 from IP 1.2.3.4 using udp:
+- Allow traffic from 192.168.0.4 to port 22 using only tcp protocol:
 
-`ufw allow from 1.2.3.4 to any port 1337 proto udp`
+`ufw allow from {{192.168.0.4}} to {{any}} port {{22}} proto {{tcp}}`
 
-- Add ufw deny rule:
+- Deny incoming traffic on port 80 on this:
 
-`ufw deny {{port}} {{service_name}}`
+`ufw deny {{80}}`
+
+- Deny traffic to port 22 using only udp protocol:
+
+`ufw deny from {{any}} to {{any}} port {{22}} proto {{udp}}`
+
+- Delete the deny rule on port 80:
+
+`ufw delete deny {{80}}`
