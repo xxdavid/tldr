@@ -19,11 +19,11 @@
 
 `ufw allow {{5432}}`
 
-- Allow traffic from 192.168.0.4 to port 22 using only tcp protocol:
+- Allow traffic from 192.168.0.4 to any address on this host on port 22 using only tcp protocol:
 
 `ufw allow from {{192.168.0.4}} to {{any}} port {{22}} proto {{tcp}}`
 
-- Deny incoming traffic on port 80 on this:
+- Deny traffic on port 80 on this host:
 
 `ufw deny {{80}}`
 
@@ -31,6 +31,6 @@
 
 `ufw deny from {{any}} to {{any}} port {{22}} proto {{udp}}`
 
-- Delete the deny rule on port 80:
+- Remove the deny rule on port 80:
 
 `ufw delete deny {{80}}`
