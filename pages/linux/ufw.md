@@ -11,9 +11,9 @@
 
 `ufw disable`
 
-- Show ufw rules:
+- Show ufw rules along with their numbers:
 
-`ufw status`
+`ufw status numbered`
 
 - Allow incoming traffic on port 5432 on this host:
 
@@ -31,6 +31,6 @@
 
 `ufw deny from {{any}} to {{any}} port {{22}} proto {{udp}}`
 
-- Remove the deny rule on port 80:
+- Remove a particular rule. The rule number can be retrieved from the "ufw status numbered" command:
 
-`ufw delete deny {{80}}`
+`ufw delete {{rule_number}}`
