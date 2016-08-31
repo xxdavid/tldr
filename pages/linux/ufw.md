@@ -11,7 +11,7 @@
 
 `ufw disable`
 
-- Show ufw rules along with their numbers:
+- Show ufw rules, along with their numbers:
 
 `ufw status numbered`
 
@@ -19,7 +19,7 @@
 
 `ufw allow {{5432}}`
 
-- Allow traffic from 192.168.0.4 to any address on this host on port 22 using only tcp protocol:
+- Allow traffic from 192.168.0.4 to any address on this host, on port 22, using only the tcp protocol:
 
 `ufw allow from {{192.168.0.4}} to {{any}} port {{22}} proto {{tcp}}`
 
@@ -27,10 +27,10 @@
 
 `ufw deny {{80}}`
 
-- Deny traffic to port 22 using only udp protocol:
+- Deny traffic to port 22, using only the UDP protocol:
 
 `ufw deny from {{any}} to {{any}} port {{22}} proto {{udp}}`
 
-- Remove a particular rule. The rule number can be retrieved from the "ufw status numbered" command:
+- Remove a particular rule. The rule number can be retrieved from the `ufw status numbered` command:
 
 `ufw delete {{rule_number}}`
